@@ -108,13 +108,15 @@ public class IngredientServiceImplTest {
 
     }
 
+
     @Test
-    public void testDeleteById(){
+    public void testDeleteById() throws Exception {
         //given
         Recipe recipe = new Recipe();
         Ingredient ingredient = new Ingredient();
         ingredient.setId("3");
         recipe.addIngredient(ingredient);
+        Optional<Recipe> recipeOptional = Optional.of(recipe);
 
         when(recipeReactiveRepository.findById(anyString())).thenReturn(Mono.just(recipe));
         when(recipeReactiveRepository.save(any())).thenReturn(Mono.just(recipe));

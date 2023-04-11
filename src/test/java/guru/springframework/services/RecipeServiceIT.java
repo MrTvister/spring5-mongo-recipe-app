@@ -19,26 +19,19 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by jt on 6/21/17.
  */
-@Ignore
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RecipeServiceIT {
-
     public static final String NEW_DESCRIPTION = "New Description";
-
     @Autowired
     RecipeService recipeService;
-
     @Autowired
     RecipeRepository recipeRepository;
-
     @Autowired
     RecipeCommandToRecipe recipeCommandToRecipe;
-
     @Autowired
     RecipeToRecipeCommand recipeToRecipeCommand;
-
-    @Transactional
     @Test
     public void testSaveOfDescription() throws Exception {
         //given
